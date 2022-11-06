@@ -19,7 +19,7 @@ export const executePromise = async (command: string, message: string | null = n
     }
 }
 
-export const spawnExecutePromise = async (command = '', args = [], message: string | null = null) => {
+export const spawnExecutePromise = async (command = '', args = [], message: string | null = null, excludeLogs: RegExp) => {
     const spinner = ora(chalk.blue(`${message}...`)).start()
     return new Promise((resolve, reject) => {
         const executedProcess = spawn(command, args)
@@ -27,7 +27,7 @@ export const spawnExecutePromise = async (command = '', args = [], message: stri
         executedProcess.stdout.on('data', (data: Blob) => {
             spinner.clear()
             const text = data.toString()
-            if (text) {
+            if (text && !excludeLogs.test(text)) {
                 console.log(text)
             }
             spinner.start()
@@ -36,7 +36,7 @@ export const spawnExecutePromise = async (command = '', args = [], message: stri
         executedProcess.stderr.on('data', (data: Blob) => {
             spinner.clear()
             const text = data.toString()
-            if (text) {
+            if (text && !excludeLogs.test(text)) {
                 console.log(chalk.yellow(text))
             }
             spinner.start()

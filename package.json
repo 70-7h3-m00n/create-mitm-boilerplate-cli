@@ -1,6 +1,6 @@
 {
-  "name": "create-mitm-starter-cli",
-  "version": "1.0.0",
+  "name": "cli-create-mitm-starter",
+  "version": "1.0.1",
   "description": "MITM team project starter",
   "main": "dist/bin/generate.js",
   "author": "Anis Dimassi aka Anissem <dima.anissem@gmail.com>",
