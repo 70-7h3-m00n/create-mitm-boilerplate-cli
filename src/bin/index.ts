@@ -6,7 +6,7 @@ import { executePromise, spawnExecutePromise } from '../helpers/execute'
 
 const projectName = process.argv[2]
 const currentPath = process.cwd()
-const projectPath = path.join(currentPath, projectName === '.' ? '' : !projectName ? 'mitm-starter' : projectName)
+const projectPath = path.join(currentPath, projectName === '.' ? '' : !projectName ? 'mitm-boilerplate' : projectName)
 
 // to change with github api
 const git_repo = 'https://github.com/Anissemm/testing-template.git' // just temporary

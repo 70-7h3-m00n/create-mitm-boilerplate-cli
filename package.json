@@ -1,6 +1,6 @@
 {
   "name": "create-mitm-boilerplate",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "MITM team project starter",
   "main": "dist/bin/generate.js",
   "author": "Anis Dimassi aka Anissem <dima.anissem@gmail.com>",
