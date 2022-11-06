@@ -1,5 +1,5 @@
 {
-  "name": "create-mitm-starter",
+  "name": "create-mitm-starter-cli",
   "version": "1.0.0",
   "description": "MITM team project starter",
   "main": "dist/bin/generate.js",
@@ -7,7 +7,9 @@
   "license": "MIT",
   "type": "module",
   "private": false,
-  "bin": "dist/bin/index.js",
+  "bin": {
+    "create-mitm-starter": "dist/bin/index.js"
+  },
   "exports": {
     "./*": "./dist/**/*"
   },
