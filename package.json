@@ -1,0 +1,33 @@
+{
+  "name": "create-mitm-starter",
+  "version": "1.0.0",
+  "description": "MITM team project starter",
+  "main": "dist/bin/generate.js",
+  "author": "Anis Dimassi aka Anissem <dima.anissem@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "private": false,
+  "bin": "dist/bin/index.js",
+  "exports": {
+    "./*": "./dist/**/*"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "rimraf ./dist && tsc -p .",
+    "prepare": "ts-patch install -s"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@zoltu/typescript-transformer-append-js-extension": "^1.0.1",
+    "rimraf": "^3.0.2",
+    "ts-patch": "^2.0.2",
+    "typescript": "^4.8.4",
+    "typescript-transform-paths": "^3.4.4"
+  }
+}
