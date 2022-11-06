@@ -2,6 +2,7 @@
 import path from 'path'
 import { rm } from 'fs/promises'
 import chalk from 'chalk'
+import { fileExists } from '../helpers/fileExists'
 
 const projectName = process.argv[2]
 const currentPath = process.cwd()
@@ -11,6 +12,7 @@ const projectPath = path.join(currentPath, projectName === '.' ? '' : !projectNa
 const git_repo = 'https://github.com/Anissemm/testing-template.git' // just for testing purposes
 
 try {
+    fileExists(projectName, projectPath)
     console.log('Creating MITM starter project in', chalk.blue(`${projectPath}.\n`))
 
     console.log(chalk.bold('Using yarn.\n'))
