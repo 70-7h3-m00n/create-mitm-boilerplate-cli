@@ -3,7 +3,7 @@ import path from 'path'
 import { rm } from 'fs/promises'
 import chalk from 'chalk'
 import { fileExists } from '../helpers/fileExists'
-import { executePromise } from '../helpers/execute'
+import { executePromise, spawnExecutePromise } from '../helpers/execute'
 
 const projectName = process.argv[2]
 const currentPath = process.cwd()
@@ -29,6 +29,11 @@ try {
     console.log('-', chalk.greenBright('next'))
     console.log('-', chalk.greenBright('styled-components'))
     console.log('-', chalk.greenBright('storybook\n'))
+
+    await spawnExecutePromise(/^win/.test(process.platform) ? 'yarn.cmd' : 'yarn', [], 'Installing dependencies')
+    await executePromise(`git init`)
+    await executePromise('git add .')
+    await executePromise('git commit -m "build: initial commit"', 'Initialized a git repository.\n')
 
     console.log(chalk.greenBright(`Success!`), `Created MITM starter project at ${projectPath}.`)
     process.exit(0)
