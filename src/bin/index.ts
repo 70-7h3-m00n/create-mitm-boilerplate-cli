@@ -3,6 +3,7 @@ import path from 'path'
 import { rm } from 'fs/promises'
 import chalk from 'chalk'
 import { fileExists } from '../helpers/fileExists'
+import { executePromise } from '../helpers/execute'
 
 const projectName = process.argv[2]
 const currentPath = process.cwd()
@@ -16,6 +17,7 @@ try {
     console.log('Creating MITM starter project in', chalk.blue(`${projectPath}.\n`))
 
     console.log(chalk.bold('Using yarn.\n'))
+    await executePromise(`git clone --depth 1 ${git_repo} ${projectPath}`)
 
     process.chdir(projectPath)
 
