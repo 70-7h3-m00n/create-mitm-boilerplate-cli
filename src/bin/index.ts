@@ -9,7 +9,7 @@ const currentPath = process.cwd()
 const projectPath = path.join(currentPath, projectName === '.' ? '' : !projectName ? 'mitm-boilerplate' : projectName)
 
 // to change with github api
-const git_repo = 'https://github.com/Anissemm/testing-template.git' // just temporary
+const git_repo = 'https://github.com/70-7h3-m00n/create-mitm-boilerplate.git' // just temporary
 
 try {
     fileExists(projectName, projectPath)
