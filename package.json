@@ -1,5 +1,5 @@
 {
-  "name": "cli-create-mitm-starter",
+  "name": "create-mitm-boilerplate",
   "version": "1.0.1",
   "description": "MITM team project starter",
   "main": "dist/bin/generate.js",
@@ -8,7 +8,7 @@
   "type": "module",
   "private": false,
   "bin": {
-    "create-mitm-starter": "dist/bin/index.js"
+    "create-mitm-boilerplate": "dist/bin/index.js"
   },
   "exports": {
     "./*": "./dist/**/*"

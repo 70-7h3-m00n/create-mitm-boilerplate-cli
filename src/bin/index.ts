@@ -20,7 +20,6 @@ try {
 
     process.chdir(projectPath)
 
-
     console.log('Installing dependencies:')
     console.log('-', chalk.greenBright('react'))
     console.log('-', chalk.greenBright('react-dom'))
