@@ -18,10 +18,10 @@ try {
 
     console.log(chalk.bold('Using yarn.\n'))
     await executePromise(`git clone --depth 1 ${git_repo} ${projectPath}`)
+    await rm(`./${projectName}/.git`, { recursive: true, force: true })
 
     process.chdir(projectPath)
 
-    await rm('./.git', { recursive: true, force: true })
 
     console.log('Installing dependencies:')
     console.log('-', chalk.greenBright('react'))
